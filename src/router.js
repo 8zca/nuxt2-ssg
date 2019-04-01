@@ -4,6 +4,7 @@ import Layout from '@/components/templates/Layout.vue'
 
 Vue.use(Router)
 
+// ログイン後はchildrenを持つ
 export const routes = [
   {
     path: '/login',
@@ -15,9 +16,9 @@ export const routes = [
     component: Layout,
     children: [{
       path: '',
-      name: 'dashbaord',
+      name: 'dashboard',
       component: () => import('@/components/pages/dashboard/index.vue'),
-      icon: 'dashbaord',
+      icon: 'dashboard',
       title: 'ダッシュボード'
     }]
   }
