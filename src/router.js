@@ -15,11 +15,30 @@ export const routes = [
     component: Layout,
     children: [{
       path: '',
-      name: 'dashbaord',
+      name: 'dashboard',
       component: () => import('@/components/pages/dashboard/index.vue'),
-      icon: 'dashbaord',
+      icon: 'dashboard',
       title: 'ダッシュボード'
     }]
+  },
+  {
+    path: '/user',
+    component: Layout,
+    title: 'ユーザ管理',
+    icon: 'account_circle',
+    children: [
+      {
+        path: '',
+        name: 'userSearch',
+        component: () => import('@/components/pages/dashboard/index.vue'),
+        title: 'ユーザ検索'
+      }, {
+        path: 'create',
+        name: 'userCreate',
+        component: () => import('@/components/pages/dashboard/index.vue'),
+        title: 'ユーザ作成'
+      }
+    ]
   }
 ]
 

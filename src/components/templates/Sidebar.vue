@@ -4,19 +4,32 @@
       v-list
         v-list-tile(@click="")
           v-list-tile-content
-            v-list-tile-title.title #[v-icon.mr-2 data_usage]Vue.js CRM
+            v-list-tile-title.title #[v-icon.mr-2 data_usage] Dashboard
     v-list
-      v-list-tile(v-for="route in routes" :key="route.name" @click="")
+      template(v-for="route in routes")
         template(v-if="isShow(route)")
-          v-list-tile-action
-            v-icon {{ route.icon }}
-          v-list-tile-content
-            v-list-tile-title {{ route.title }}
+          template(v-if="hasOneChildren(route)")
+            v-list-tile
+              v-list-tile-action
+                v-icon {{ route.children[0].icon }}
+              v-list-tile-content
+                v-list-tile-title {{ route.children[0].title }}
+          template(v-else)
+            v-list-group(:prepend-icon="route.icon")
+              template(v-slot:activator)
+                v-list-tile
+                  v-list-tile-content
+                    v-list-tile-title {{ route.title }}
+              v-list-tile(v-for="child in route.children" :key="route.name")
+                v-list-tile-action
+                  v-icon {{ child.icon }}
+                v-list-tile-content
+                  v-list-tile-title {{ child.title }}
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import routes from '@/router'
+import { routes } from '@/router'
 
 export default {
   data () {
@@ -35,7 +48,10 @@ export default {
   },
   methods: {
     isShow (route) {
-      return !(route.show && !route.show)
+      return route.show !== false
+    },
+    hasOneChildren (route) {
+      return route.children.length === 1
     }
   }
 }
