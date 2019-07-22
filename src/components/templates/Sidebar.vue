@@ -8,7 +8,7 @@
     v-list
       template(v-for="route in routes")
         template(v-if="isShow(route)")
-          template(v-if="hasOneChildren(route)")
+          template(v-if="hasOneChild(route)")
             v-list-tile
               v-list-tile-action
                 v-icon {{ route.children[0].icon }}
@@ -34,8 +34,7 @@ import { routes } from '@/router'
 export default {
   data () {
     return {
-      routes: [],
-      drawer: true
+      routes: routes
     }
   },
   computed: {
@@ -43,14 +42,11 @@ export default {
       sidebar: 'app/sidebar'
     })
   },
-  mounted () {
-    this.routes = routes
-  },
   methods: {
     isShow (route) {
       return route.show !== false
     },
-    hasOneChildren (route) {
+    hasOneChild (route) {
       return route.children.length === 1
     }
   }

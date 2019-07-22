@@ -4,6 +4,7 @@ import Layout from '@/components/templates/Layout.vue'
 
 Vue.use(Router)
 
+// ログイン後はchildrenを持つ
 export const routes = [
   {
     path: '/login',
