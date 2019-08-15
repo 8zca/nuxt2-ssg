@@ -23,6 +23,17 @@ export const routes = [
     }]
   },
   {
+    path: '/about',
+    component: Layout,
+    children: [{
+      path: '',
+      name: 'about',
+      component: () => import('@/components/pages/about/index.vue'),
+      icon: 'face',
+      title: 'About'
+    }]
+  },
+  {
     path: '/user',
     component: Layout,
     title: 'ユーザ管理',

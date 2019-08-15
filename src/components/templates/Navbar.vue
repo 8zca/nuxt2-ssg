@@ -1,14 +1,15 @@
 <template lang="pug">
-  v-toolbar(app fixed flat dark color="primary")
-    v-toolbar-side-icon(@click.stop='toggleSidebar')
-    v-spacer
-    v-toolbar-items
-      v-btn(flat to="/") Home
-      v-btn(flat to="/about") About
-      v-btn(flat to="/logout")
-        v-icon(small) exit_to_app
-        | &nbsp;ログアウト
-      v-btn(flat fab small outline) K
+  div
+    v-toolbar(app fixed flat dark color="primary")
+      v-toolbar-side-icon(@click.stop='toggleSidebar')
+      v-spacer
+      v-toolbar-items
+        v-btn(flat to="/") Home
+        v-btn(flat to="/about") About
+        v-btn(flat to="/logout")
+          v-icon(small) exit_to_app
+          | &nbsp;ログアウト
+        v-btn(flat fab small outline) K
 </template>
 
 <script>

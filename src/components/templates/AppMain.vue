@@ -5,12 +5,6 @@
         router-view
 </template>
 
-<script>
-export default {
-  
-}
-</script>
-
 <style lang="scss" scoped>
 .wrapper {
   margin-top: 58px;
