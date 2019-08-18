@@ -4,12 +4,12 @@
       v-toolbar-side-icon(@click.stop='toggleSidebar')
       v-spacer
       v-toolbar-items
-        v-btn(flat to="/") Home
-        v-btn(flat to="/about") About
-        v-btn(flat to="/logout")
+        v-btn(text to="/") Home
+        v-btn(text to="/about") About
+        v-btn(text to="/logout")
           v-icon(small) exit_to_app
           | &nbsp;ログアウト
-        v-btn(flat fab small outline) K
+        v-btn(text fab small outline) K
 </template>
 
 <script>

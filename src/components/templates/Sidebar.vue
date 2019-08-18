@@ -1,30 +1,23 @@
 <template lang="pug">
   v-navigation-drawer(v-model="sidebar.isOpen" app stateless width="220")
     v-toolbar(dark flat color="primary")
-      v-list
-        v-list-tile(@click="")
-          v-list-tile-content
-            v-list-tile-title.title #[v-icon.mr-2 data_usage] Dashboard
+      v-toolbar-title(@click="") #[v-icon.mr-2 data_usage] Dashboard
     v-list
       template(v-for="route in routes")
         template(v-if="isShow(route)")
           template(v-if="hasOneChild(route)")
-            v-list-tile
-              v-list-tile-action
+            v-list-item
+              v-list-item-icon
                 v-icon {{ route.children[0].icon }}
-              v-list-tile-content
-                v-list-tile-title {{ route.children[0].title }}
+              v-list-item-title {{ route.children[0].title }}
           template(v-else)
             v-list-group(:prepend-icon="route.icon")
               template(v-slot:activator)
-                v-list-tile
-                  v-list-tile-content
-                    v-list-tile-title {{ route.title }}
-              v-list-tile(v-for="child in route.children" :key="route.name")
-                v-list-tile-action
+                v-list-item-title {{ route.title }}
+              v-list-item(v-for="child in route.children" :key="route.name")
+                v-list-item-title {{ child.title }}
+                v-list-item-icon
                   v-icon {{ child.icon }}
-                v-list-tile-content
-                  v-list-tile-title {{ child.title }}
 </template>
 
 <script>
