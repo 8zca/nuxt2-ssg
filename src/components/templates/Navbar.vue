@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     v-toolbar(app fixed flat dark color="primary")
-      v-toolbar-side-icon(@click.stop='toggleSidebar')
+      v-app-bar-nav-icon(@click.stop='toggleSidebar')
       v-spacer
       v-toolbar-items
         v-btn(text to="/") Home
