@@ -12,7 +12,9 @@
       <dt>Job</dt>
       <dd>{{ userDetail.job }}</dd>
       <dt>Skills</dt>
-      <dd>{{ userDetail.skill }}</dd>    </dl>
+      <dd>{{ userDetail.skill }}</dd>
+    </dl>
+    <nuxt-link v-if="userDetail" :to="`/companies/${userDetail.company}`">{{ userDetail.company }}</nuxt-link>
   </div>
 </template>
 
@@ -23,7 +25,7 @@ import { Component, Vue } from 'nuxt-property-decorator'
   async asyncData({ params, redirect }) {
     const id = params.id
     const data = await import('~/data/users.json')
-    const user = data.default.find((user) => user.id === id)
+    const user = data.default.find((user) => user.id === Number(id))
     if (!user) {
       return redirect(302, '/users')
     }
