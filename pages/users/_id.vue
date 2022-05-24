@@ -6,6 +6,7 @@
       <dt>Name</dt>
       <dd>{{ user.name }}</dd>
     </dl>
+    <div v-if="loading">Loading...</div>
     <dl v-if="userDetail">
       <dt>Avatar</dt>
       <dd><img :src="userDetail.avatar" width="50" height="50" /></dd>
@@ -36,9 +37,15 @@ import { Component, Vue } from 'nuxt-property-decorator'
 export default class User extends Vue {
   id = ''
   userDetail = null
+  loading = false
 
   async mounted() {
-    this.userDetail = await this.$axios.$get('https://nuxt2-ssg.free.beeceptor.com/my/api/user')
+    this.loading = true
+    try {
+      this.userDetail = await this.$axios.$get('https://nuxt2-ssg.free.beeceptor.com/my/api/user')
+    } finally {
+      this.loading = false
+    }
   }
 }
 </script>

@@ -1934,7 +1934,7 @@
     "@typescript-eslint/types" "4.33.0"
     eslint-visitor-keys "^2.0.0"
 
-"@vitejs/plugin-legacy@^1.6.0":
+"@vitejs/plugin-legacy@^1.5.3":
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-legacy/-/plugin-legacy-1.8.2.tgz#2f315bcb6685b12719813fb9412851445cca636f"
   integrity sha512-NCOKU+pU+cxLMR9P9RTolEuOK+h+zYBXlknj+zGcKSj/NXBZYgA1GAH1FnO4zijoWRiTaiOm2ha9LQrELE7XHg==
@@ -6515,23 +6515,22 @@ nuxt-property-decorator@^2.9.1:
     vuex-class "^0.3.2"
     vuex-module-decorators "^1.0.1"
 
-nuxt-vite@^0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/nuxt-vite/-/nuxt-vite-0.3.5.tgz#89e01fdb1d28c4d3c5cc82f6d1efc77a46332205"
-  integrity sha512-rAtmMycDU4k88S/H8WiCCqzr99lnYPTxgekU7+HYVoLHE62aol2E0/ci1MjBfBVg5DbhKHvqDn1nLCL5ye4Vsg==
+nuxt-vite@0.2:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/nuxt-vite/-/nuxt-vite-0.2.4.tgz#dede42b4877c50afd07c3a3ee87cba9a7add8198"
+  integrity sha512-BG1rJSynm53kGEnaUxcuaWQpm6Ltgt5dq8l6qbknGMvz5vzD5TUcDkHdadXUuln+XGj7GLNYiES7qIcJoCAkrQ==
   dependencies:
-    "@vitejs/plugin-legacy" "^1.6.0"
+    "@vitejs/plugin-legacy" "^1.5.3"
     consola "^2.15.3"
-    defu "^5.0.0"
     fs-extra "^10.0.0"
-    pathe "^0.2.0"
     postcss-import "^14.0.2"
     postcss-import-resolver "^2.0.0"
     postcss-preset-env "^6.7.0"
     postcss-url "^10.1.3"
     semver "^7.3.5"
     ufo "^0.7.9"
-    vite "^2.5.7"
+    upath "^2.0.1"
+    vite "^2.5.4"
     vite-plugin-vue2 "^1.8.2"
 
 nuxt@^2.15.7:
@@ -6904,11 +6903,6 @@ path-type@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
-
-pathe@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/pathe/-/pathe-0.2.0.tgz#30fd7bbe0a0d91f0e60bae621f5d19e9e225c339"
-  integrity sha512-sTitTPYnn23esFR3RlqYBWn4c45WGeLcsKzQiUpXJAyfcWkolvlYpV8FLo7JishK946oQwMFUCHXQ9AjGPKExw==
 
 pbkdf2@^3.0.3:
   version "3.1.2"
@@ -9360,7 +9354,7 @@ vite-plugin-vue2@^1.8.2:
     source-map "^0.7.3"
     vue-template-es2015-compiler "^1.9.1"
 
-vite@^2.5.7:
+vite@^2.5.4:
   version "2.9.9"
   resolved "https://registry.yarnpkg.com/vite/-/vite-2.9.9.tgz#8b558987db5e60fedec2f4b003b73164cb081c5e"
   integrity sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==
